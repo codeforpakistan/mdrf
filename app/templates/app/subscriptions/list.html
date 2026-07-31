@@ -1,0 +1,41 @@
+{% extends "app/layouts/page.html" %}
+
+{% block content %}
+<header class="mb-3">
+    <h2>
+        Subscriptions
+        <a class="btn btn-success btn-sm float-end" href="{% url 'subscription_create' %}">Subscribe</a>
+    </h2>
+    <p class="lead">Your subscriptions to disaster or hazard specific alerts</p>
+</header>
+
+<h3>Disasters</h3>
+<ul class="list-group my-3">
+{% for sub in subscriptions %}
+{% if sub.disaster %}
+<li class="d-flex list-group-item align-items-center">
+    <div class="flex-grow-1">{{ sub.disaster }}</div>
+    <form method="post" action="{% url 'subscription_delete' sub.id %}">
+        {% csrf_token %}
+        <button class="btn btn-danger btn-sm" type="submit">Unsubscribe</button>
+    </form>
+</li>
+{% endif %}
+{% endfor %}
+</ul>
+
+<h3>Hazards</h3>
+<ul class="list-group my-3">
+{% for sub in subscriptions %}
+{% if sub.hazard %}
+<li class="d-flex list-group-item align-items-center">
+    <div class="flex-grow-1">{{ sub.hazard }}</div>
+    <form method="post" action="{% url 'subscription_delete' sub.id %}">
+        {% csrf_token %}
+        <button class="btn btn-danger btn-sm" type="submit">Unsubscribe</button>
+    </form>
+</li>
+{% endif %}
+{% endfor %}
+</ul>
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends "app/layouts/page.html" %} 
+{% block content %}
+<article>
+  <header>
+    <h1>
+      {{ issue.title }}
+      <a class="btn btn-primary btn-sm float-end" href="{% url 'admin:app_issue_change' issue.id %}">Edit</a>
+    </h1>
+  </header>
+  <p>
+    <strong>Disaster:</strong>
+    {{ issue.disaster }}
+  </p>
+  <p>
+    <strong>Hazard:</strong>
+    {{ issue.hazards.all|join:", "|default:"Not Specified" }}
+  </p>
+  <p>
+    <strong>Location:</strong>
+    {{ issue.location }}
+  </p>
+  <p>
+    <strong>Status:</strong>
+    {{ issue.status }}
+  </p>
+  <section>{{ issue.description|safe }}</section>
+</article>
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends "app/layouts/page.html" %}
+
+{% block content %}
+<article>
+    <header>
+        <p>
+        {% for node in hazard.get_ancestors %}
+        <a href="{{ node.get_absolute_url }}">{{ node.name }}</a>
+        {% if not forloop.last %} / {% endif %}
+        {% endfor %}
+        </p>
+        <h2>{{ hazard.name }}</h2>
+    </header>
+    <section>
+        {{ hazard.description|safe }}
+    </section>
+</article>
+{% endblock %}

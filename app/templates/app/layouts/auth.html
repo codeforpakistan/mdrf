@@ -1,0 +1,46 @@
+{% extends "app/layouts/base.html" %}
+{% load django_bootstrap5 %}
+{% block page %}
+<div class="container-fluid vh-100">
+  <div class="row h-100">
+    <div class="col-lg-6 bg-secondary-subtle d-flex align-items-center justify-content-center">
+      <div class="text-center px-4">
+                <div class="mb-4">
+                    <h1 class="display-4 fw-bold mb-4">MDRF</h1>
+                    <p class="lead mb-4">Multi-Disaster Response Framework</p>
+                    <p class="fs-5 opacity-75">Manage disaster preparedness and relief coordination</p>
+                </div>
+                
+                <div class="row text-center mt-5">
+                    <div class="col-4">
+                        <div class="mb-2">
+                            <i class="bi bi-database fs-1"></i>
+                        </div>
+                        <small>Open Datasets</small>
+                    </div>
+                    <div class="col-4">
+                        <div class="mb-2">
+                            <i class="bi bi-people fs-1"></i>
+                        </div>
+                        <small>Organizations</small>
+                    </div>
+                    <div class="col-4">
+                        <div class="mb-2">
+                            <i class="bi bi-tags fs-1"></i>
+                        </div>
+                        <small>Topics</small>
+                    </div>
+                </div>
+            </div>
+    </div>
+    <div class="col-lg-6 d-flex align-items-center">
+      {% bootstrap_messages %}
+      <div class="w-100 px-4 px-lg-5">
+        <div class="mx-auto" style="max-width: 400px;">
+          {% block content %}{% endblock %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

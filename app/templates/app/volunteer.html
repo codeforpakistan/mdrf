@@ -1,0 +1,16 @@
+{% extends "app/layouts/page.html" %}
+
+{% block content %}
+<h1>Volunteer</h1>
+{% if user_is_volunteer %}
+<form method="post" action="{% url 'withdraw' %}">
+    {% csrf_token %}
+    <button class="btn btn-danger" type="submit">I want to withdraw</button>
+</form>
+{% else %}
+<form method="post" action="{% url 'volunteer' %}">
+    {% csrf_token %}
+    <button class="btn btn-primary" type="submit">I want to volunteer</button>
+</form>
+{% endif %}
+{% endblock %}

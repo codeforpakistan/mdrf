@@ -1,0 +1,130 @@
+[
+    {
+        "model": "app.location",
+        "pk": 1,
+        "fields": {
+            "name": "Pakistan",
+            "slug": "pakistan",
+            "code": "PK",
+            "latitude": 30.43837536,
+            "longitude": 70.14005798,
+            "parent": null,
+            "lft": 1,
+            "rght": 16,
+            "tree_id": 1,
+            "level": 0
+        }
+    },
+    {
+        "model": "app.location",
+        "pk": 2,
+        "fields": {
+            "name": "Balochistan",
+            "slug": "balochistan",
+            "code": "BA",
+            "latitude": 28.49738407,
+            "longitude": 65.70961117,
+            "parent": 1,
+            "lft": 2,
+            "rght": 3,
+            "tree_id": 1,
+            "level": 1
+        }
+    },
+    {
+        "model": "app.location",
+        "pk": 3,
+        "fields": {
+            "name": "Kyber Pakhtunkhwa",
+            "slug": "kyber-pakhtunkhwa",
+            "code": "KP",
+            "latitude": 34.03646716,
+            "longitude": 72.26255184,
+            "parent": 1,
+            "lft": 4,
+            "rght": 5,
+            "tree_id": 1,
+            "level": 1
+        }
+    },
+    {
+        "model": "app.location",
+        "pk": 4,
+        "fields": {
+            "name": "Punjab",
+            "slug": "punjab",
+            "code": "PB",
+            "latitude": 30.86162475,
+            "longitude": 72.32024937,
+            "parent": 1,
+            "lft": 6,
+            "rght": 7,
+            "tree_id": 1,
+            "level": 1
+        }
+    },
+    {
+        "model": "app.location",
+        "pk": 5,
+        "fields": {
+            "name": "Sindh",
+            "slug": "sindh",
+            "code": "SD",
+            "latitude": 26.13399506,
+            "longitude": 68.75576081,
+            "parent": 1,
+            "lft": 8,
+            "rght": 9,
+            "tree_id": 1,
+            "level": 1
+        }
+    },
+    {
+        "model": "app.location",
+        "pk": 6,
+        "fields": {
+            "name": "Islamabad",
+            "slug": "islamabad",
+            "code": "IS",
+            "latitude": 33.65087509,
+            "longitude": 72.95796258,
+            "parent": 1,
+            "lft": 10,
+            "rght": 11,
+            "tree_id": 1,
+            "level": 1
+        }
+    },
+    {
+        "model": "app.location",
+        "pk": 7,
+        "fields": {
+            "name": "Azad Kashmir",
+            "slug": "azad-kashmir",
+            "code": "JK",
+            "latitude": 33.95324505,
+            "longitude": 73.90063879,
+            "parent": 1,
+            "lft": 12,
+            "rght": 13,
+            "tree_id": 1,
+            "level": 1
+        }
+    },
+    {
+        "model": "app.location",
+        "pk": 8,
+        "fields": {
+            "name": "Gilgit-Baltistan",
+            "slug": "gilgit-baltistan",
+            "code": "GB",
+            "latitude": 35.80287376,
+            "longitude": 74.84463558,
+            "parent": 1,
+            "lft": 14,
+            "rght": 15,
+            "tree_id": 1,
+            "level": 1
+        }
+    }
+]

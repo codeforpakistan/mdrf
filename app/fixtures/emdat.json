@@ -1,0 +1,849 @@
+[
+    {
+        "model": "app.hazard",
+        "fields": {
+            "key": "nat-bio-ani-ani",
+            "group": "Natural",
+            "subgroup": "Biological",
+            "type": "Animal incident",
+            "subtype": "Animal incident",
+            "slug": "animal-incident"
+        }
+    },
+    {
+        "model": "app.hazard",
+        "fields": {
+            "key": "nat-bio-epi-bac",
+            "group": "Natural",
+            "subgroup": "Biological",
+            "type": "Epidemic",
+            "subtype": "Bacterial disease",
+            "slug": "bacterial-disease"
+        }
+    },
+    {
+        "model": "app.hazard",
+        "fields": {
+            "key": "nat-bio-epi-dis",
+            "group": "Natural",
+            "subgroup": "Biological",
+            "type": "Epidemic",
+            "subtype": "Infectious disease",
+            "slug": "infectious-disease"
+        }
+    },
+    {
+        "model": "app.hazard",
+        "fields": {
+            "key": "nat-bio-epi-fun",
+            "group": "Natural",
+            "subgroup": "Biological",
+            "type": "Epidemic",
+            "subtype": "Fungal disease",
+            "slug": "fungal-disease"
+        }
+    },
+    {
+        "model": "app.hazard",
+        "fields": {
+            "key": "nat-bio-epi-par",
+            "group": "Natural",
+            "subgroup": "Biological",
+            "type": "Epidemic",
+            "subtype": "Parasitic disease",
+            "slug": "parasitic-disease"
+        }
+    },
+    {
+        "model": "app.hazard",
+        "fields": {
+            "key": "nat-bio-epi-pri",
+            "group": "Natural",
+            "subgroup": "Biological",
+            "type": "Epidemic",
+            "subtype": "Prion disease",
+            "slug": "prion-disease"
+        }
+    },
+    {
+        "model": "app.hazard",
+        "fields": {
+            "key": "nat-bio-epi-vir",
+            "group": "Natural",
+            "subgroup": "Biological",
+            "type": "Epidemic",
+            "subtype": "Viral disease",
+            "slug": "viral-disease"
+        }
+    },
+    {
+        "model": "app.hazard",
+        "fields": {
+            "key": "nat-bio-inf-gra",
+            "group": "Natural",
+            "subgroup": "Biological",
+            "type": "Infestation",
+            "subtype": "Grasshopper infestation",
+            "slug": "grasshopper-infestation"
+        }
+    },
+    {
+        "model": "app.hazard",
+        "fields": {
+            "key": "nat-bio-inf-inf",
+            "group": "Natural",
+            "subgroup": "Biological",
+            "type": "Infestation",
+            "subtype": "Infestation (General)",
+            "slug": "infestation-general"
+        }
+    },
+    {
+        "model": "app.hazard",
+        "fields": {
+            "key": "nat-bio-inf-loc",
+            "group": "Natural",
+            "subgroup": "Biological",
+            "type": "Infestation",
+            "subtype": "Locust infestation",
+            "slug": "locust-infestation"
+        }
+    },
+    {
+        "model": "app.hazard",
+        "fields": {
+            "key": "nat-bio-inf-wor",
+            "group": "Natural",
+            "subgroup": "Biological",
+            "type": "Infestation",
+            "subtype": "Worms infestation",
+            "slug": "worms-infestation"
+        }
+    },
+    {
+        "model": "app.hazard",
+        "fields": {
+            "key": "nat-cli-dro-dro",
+            "group": "Natural",
+            "subgroup": "Climatological",
+            "type": "Drought",
+            "subtype": "Drought",
+            "slug": "drought"
+        }
+    },
+    {
+        "model": "app.hazard",
+        "fields": {
+            "key": "nat-cli-glo-glo",
+            "group": "Natural",
+            "subgroup": "Climatological",
+            "type": "Glacial lake outburst flood",
+            "subtype": "Glacial lake outburst flood",
+            "slug": "glacial-lake-outburst-flood"
+        }
+    },
+    {
+        "model": "app.hazard",
+        "fields": {
+            "key": "nat-cli-wil-for",
+            "group": "Natural",
+            "subgroup": "Climatological",
+            "type": "Wildfire",
+            "subtype": "Forest fire",
+            "slug": "forest-fire"
+        }
+    },
+    {
+        "model": "app.hazard",
+        "fields": {
+            "key": "nat-cli-wil-lan",
+            "group": "Natural",
+            "subgroup": "Climatological",
+            "type": "Wildfire",
+            "subtype": "Land fire (Brush, Bush, Pasture)",
+            "slug": "land-fire"
+        }
+    },
+    {
+        "model": "app.hazard",
+        "fields": {
+            "key": "nat-cli-wil-wil",
+            "group": "Natural",
+            "subgroup": "Climatological",
+            "type": "Wildfire",
+            "subtype": "Wildfire (General)",
+            "slug": "wildfire-general"
+        }
+    },
+    {
+        "model": "app.hazard",
+        "fields": {
+            "key": "nat-ext-imp-air",
+            "group": "Natural",
+            "subgroup": "Extra-terrestrial",
+            "type": "Impact",
+            "subtype": "Airburst",
+            "slug": "airburst"
+        }
+    },
+    {
+        "model": "app.hazard",
+        "fields": {
+            "key": "nat-ext-imp-col",
+            "group": "Natural",
+            "subgroup": "Extra-terrestrial",
+            "type": "Impact",
+            "subtype": "Collision",
+            "slug": "collision"
+        }
+    },
+    {
+        "model": "app.hazard",
+        "fields": {
+            "key": "nat-ext-spa-ene",
+            "group": "Natural",
+            "subgroup": "Extra-terrestrial",
+            "type": "Space weather",
+            "subtype": "Energetic particles",
+            "slug": "energetic-particles"
+        }
+    },
+    {
+        "model": "app.hazard",
+        "fields": {
+            "key": "nat-ext-spa-geo",
+            "group": "Natural",
+            "subgroup": "Extra-terrestrial",
+            "type": "Space weather",
+            "subtype": "Geomagnetic storm",
+            "slug": "geomagnetic-storm"
+        }
+    },
+    {
+        "model": "app.hazard",
+        "fields": {
+            "key": "nat-ext-spa-rad",
+            "group": "Natural",
+            "subgroup": "Extra-terrestrial",
+            "type": "Space weather",
+            "subtype": "Radio disturbance",
+            "slug": "radio-disturbance"
+        }
+    },
+    {
+        "model": "app.hazard",
+        "fields": {
+            "key": "nat-ext-spa-sho",
+            "group": "Natural",
+            "subgroup": "Extra-terrestrial",
+            "type": "Space weather",
+            "subtype": "Shockwave",
+            "slug": "shockwave"
+        }
+    },
+    {
+        "model": "app.hazard",
+        "fields": {
+            "key": "nat-geo-ear-gro",
+            "group": "Natural",
+            "subgroup": "Geophysical",
+            "type": "Earthquake",
+            "subtype": "Ground movement",
+            "slug": "ground-movement"
+        }
+    },
+    {
+        "model": "app.hazard",
+        "fields": {
+            "key": "nat-geo-ear-tsu",
+            "group": "Natural",
+            "subgroup": "Geophysical",
+            "type": "Earthquake",
+            "subtype": "Tsunami",
+            "slug": "tsunami"
+        }
+    },
+    {
+        "model": "app.hazard",
+        "fields": {
+            "key": "nat-geo-mmd-ava",
+            "group": "Natural",
+            "subgroup": "Geophysical",
+            "type": "Mass movement (dry)",
+            "subtype": "Avalanche (dry)",
+            "slug": "avalanche-dry"
+        }
+    },
+    {
+        "model": "app.hazard",
+        "fields": {
+            "key": "nat-geo-mmd-lan",
+            "group": "Natural",
+            "subgroup": "Geophysical",
+            "type": "Mass movement (dry)",
+            "subtype": "Landslide (dry)",
+            "slug": "landslide-dry"
+        }
+    },
+    {
+        "model": "app.hazard",
+        "fields": {
+            "key": "nat-geo-mmd-roc",
+            "group": "Natural",
+            "subgroup": "Geophysical",
+            "type": "Mass movement (dry)",
+            "subtype": "Rockfall (dry)",
+            "slug": "rockfall-dry"
+        }
+    },
+    {
+        "model": "app.hazard",
+        "fields": {
+            "key": "nat-geo-mmd-sub",
+            "group": "Natural",
+            "subgroup": "Geophysical",
+            "type": "Mass movement (dry)",
+            "subtype": "Sudden Subsidence (dry)",
+            "slug": "sudden-subsidence-dry"
+        }
+    },
+    {
+        "model": "app.hazard",
+        "fields": {
+            "key": "nat-geo-vol-ash",
+            "group": "Natural",
+            "subgroup": "Geophysical",
+            "type": "Volcanic activity",
+            "subtype": "Ash fall",
+            "slug": "ash-fall"
+        }
+    },
+    {
+        "model": "app.hazard",
+        "fields": {
+            "key": "nat-geo-vol-lah",
+            "group": "Natural",
+            "subgroup": "Geophysical",
+            "type": "Volcanic activity",
+            "subtype": "Lahar",
+            "slug": "lahar"
+        }
+    },
+    {
+        "model": "app.hazard",
+        "fields": {
+            "key": "nat-geo-vol-lav",
+            "group": "Natural",
+            "subgroup": "Geophysical",
+            "type": "Volcanic activity",
+            "subtype": "Lava flow",
+            "slug": "lava-flow"
+        }
+    },
+    {
+        "model": "app.hazard",
+        "fields": {
+            "key": "nat-geo-vol-pyr",
+            "group": "Natural",
+            "subgroup": "Geophysical",
+            "type": "Volcanic activity",
+            "subtype": "Pyroclastic flow",
+            "slug": "pyroclastic-flow"
+        }
+    },
+    {
+        "model": "app.hazard",
+        "fields": {
+            "key": "nat-geo-vol-vol",
+            "group": "Natural",
+            "subgroup": "Geophysical",
+            "type": "Volcanic activity",
+            "subtype": "Volcanic activity (General)",
+            "slug": "volcanic-activity-general"
+        }
+    },
+    {
+        "model": "app.hazard",
+        "fields": {
+            "key": "nat-hyd-flo-coa",
+            "group": "Natural",
+            "subgroup": "Hydrological",
+            "type": "Flood",
+            "subtype": "Coastal flood",
+            "slug": "coastal-flood"
+        }
+    },
+    {
+        "model": "app.hazard",
+        "fields": {
+            "key": "nat-hyd-flo-fla",
+            "group": "Natural",
+            "subgroup": "Hydrological",
+            "type": "Flood",
+            "subtype": "Flash flood",
+            "slug": "flash-flood"
+        }
+    },
+    {
+        "model": "app.hazard",
+        "fields": {
+            "key": "nat-hyd-flo-flo",
+            "group": "Natural",
+            "subgroup": "Hydrological",
+            "type": "Flood",
+            "subtype": "Flood (General)",
+            "slug": "flood-general"
+        }
+    },
+    {
+        "model": "app.hazard",
+        "fields": {
+            "key": "nat-hyd-flo-ice",
+            "group": "Natural",
+            "subgroup": "Hydrological",
+            "type": "Flood",
+            "subtype": "Ice jam flood",
+            "slug": "ice-jam-flood"
+        }
+    },
+    {
+        "model": "app.hazard",
+        "fields": {
+            "key": "nat-hyd-flo-riv",
+            "group": "Natural",
+            "subgroup": "Hydrological",
+            "type": "Flood",
+            "subtype": "Riverine flood",
+            "slug": "riverine-flood"
+        }
+    },
+    {
+        "model": "app.hazard",
+        "fields": {
+            "key": "nat-hyd-mmw-ava",
+            "group": "Natural",
+            "subgroup": "Hydrological",
+            "type": "Mass movement (wet)",
+            "subtype": "Avalanche (wet)",
+            "slug": "avalanche-wet"
+        }
+    },
+    {
+        "model": "app.hazard",
+        "fields": {
+            "key": "nat-hyd-mmw-lan",
+            "group": "Natural",
+            "subgroup": "Hydrological",
+            "type": "Mass movement (wet)",
+            "subtype": "Landslide (wet)",
+            "slug": "landslide-wet"
+        }
+    },
+    {
+        "model": "app.hazard",
+        "fields": {
+            "key": "nat-hyd-mmw-mud",
+            "group": "Natural",
+            "subgroup": "Hydrological",
+            "type": "Mass movement (wet)",
+            "subtype": "Mudslide",
+            "slug": "mudslide"
+        }
+    },
+    {
+        "model": "app.hazard",
+        "fields": {
+            "key": "nat-hyd-mmw-roc",
+            "group": "Natural",
+            "subgroup": "Hydrological",
+            "type": "Mass movement (wet)",
+            "subtype": "Rockfall (wet)",
+            "slug": "rockfall-wet"
+        }
+    },
+    {
+        "model": "app.hazard",
+        "fields": {
+            "key": "nat-hyd-mmw-sub",
+            "group": "Natural",
+            "subgroup": "Hydrological",
+            "type": "Mass movement (wet)",
+            "subtype": "Sudden Subsidence (wet)",
+            "slug": "sudden-subsidence-wet"
+        }
+    },
+    {
+        "model": "app.hazard",
+        "fields": {
+            "key": "nat-hyd-wav-rog",
+            "group": "Natural",
+            "subgroup": "Hydrological",
+            "type": "Wave action",
+            "subtype": "Rogue wave",
+            "slug": "rogue-wave"
+        }
+    },
+    {
+        "model": "app.hazard",
+        "fields": {
+            "key": "nat-hyd-wav-sei",
+            "group": "Natural",
+            "subgroup": "Hydrological",
+            "type": "Wave action",
+            "subtype": "Seiche",
+            "slug": "seiche"
+        }
+    },
+    {
+        "model": "app.hazard",
+        "fields": {
+            "key": "nat-met-ext-col",
+            "group": "Natural",
+            "subgroup": "Meteorological",
+            "type": "Extreme temperature",
+            "subtype": "Cold wave",
+            "slug": "cold-wave"
+        }
+    },
+    {
+        "model": "app.hazard",
+        "fields": {
+            "key": "nat-met-ext-hea",
+            "group": "Natural",
+            "subgroup": "Meteorological",
+            "type": "Extreme temperature",
+            "subtype": "Heat wave",
+            "slug": "heat-wave"
+        }
+    },
+    {
+        "model": "app.hazard",
+        "fields": {
+            "key": "nat-met-ext-sev",
+            "group": "Natural",
+            "subgroup": "Meteorological",
+            "type": "Extreme temperature",
+            "subtype": "Severe winter conditions",
+            "slug": "severe-winter-conditions"
+        }
+    },
+    {
+        "model": "app.hazard",
+        "fields": {
+            "key": "nat-met-fog-fog",
+            "group": "Natural",
+            "subgroup": "Meteorological",
+            "type": "Fog",
+            "subtype": "Fog",
+            "slug": "fog"
+        }
+    },
+    {
+        "model": "app.hazard",
+        "fields": {
+            "key": "nat-met-sto-bli",
+            "group": "Natural",
+            "subgroup": "Meteorological",
+            "type": "Storm",
+            "subtype": "Blizzard/Winter storm",
+            "slug": "blizzard-winter-storm"
+        }
+    },
+    {
+        "model": "app.hazard",
+        "fields": {
+            "key": "nat-met-sto-der",
+            "group": "Natural",
+            "subgroup": "Meteorological",
+            "type": "Storm",
+            "subtype": "Derecho",
+            "slug": "derecho"
+        }
+    },
+    {
+        "model": "app.hazard",
+        "fields": {
+            "key": "nat-met-sto-ext",
+            "group": "Natural",
+            "subgroup": "Meteorological",
+            "type": "Storm",
+            "subtype": "Extra-tropical storm",
+            "slug": "extra-tropical-storm"
+        }
+    },
+    {
+        "model": "app.hazard",
+        "fields": {
+            "key": "nat-met-sto-hai",
+            "group": "Natural",
+            "subgroup": "Meteorological",
+            "type": "Storm",
+            "subtype": "Hail",
+            "slug": "hail"
+        }
+    },
+    {
+        "model": "app.hazard",
+        "fields": {
+            "key": "nat-met-sto-lig",
+            "group": "Natural",
+            "subgroup": "Meteorological",
+            "type": "Storm",
+            "subtype": "Lightning/Thunderstorms",
+            "slug": "lightning-thunderstorms"
+        }
+    },
+    {
+        "model": "app.hazard",
+        "fields": {
+            "key": "nat-met-sto-san",
+            "group": "Natural",
+            "subgroup": "Meteorological",
+            "type": "Storm",
+            "subtype": "Sand/Dust storm",
+            "slug": "sand-dust-storm"
+        }
+    },
+    {
+        "model": "app.hazard",
+        "fields": {
+            "key": "nat-met-sto-sev",
+            "group": "Natural",
+            "subgroup": "Meteorological",
+            "type": "Storm",
+            "subtype": "Severe weather",
+            "slug": "severe-weather"
+        }
+    },
+    {
+        "model": "app.hazard",
+        "fields": {
+            "key": "nat-met-sto-sto",
+            "group": "Natural",
+            "subgroup": "Meteorological",
+            "type": "Storm",
+            "subtype": "Storm (General)",
+            "slug": "storm-general"
+        }
+    },
+    {
+        "model": "app.hazard",
+        "fields": {
+            "key": "nat-met-sto-sur",
+            "group": "Natural",
+            "subgroup": "Meteorological",
+            "type": "Storm",
+            "subtype": "Storm surge",
+            "slug": "storm-surge"
+        }
+    },
+    {
+        "model": "app.hazard",
+        "fields": {
+            "key": "nat-met-sto-tor",
+            "group": "Natural",
+            "subgroup": "Meteorological",
+            "type": "Storm",
+            "subtype": "Tornado",
+            "slug": "tornado"
+        }
+    },
+    {
+        "model": "app.hazard",
+        "fields": {
+            "key": "nat-met-sto-tro",
+            "group": "Natural",
+            "subgroup": "Meteorological",
+            "type": "Storm",
+            "subtype": "Tropical cyclone",
+            "slug": "tropical-cyclone"
+        }
+    },
+    {
+        "model": "app.hazard",
+        "fields": {
+            "key": "tec-ind-che-che",
+            "group": "Technological",
+            "subgroup": "Industrial accident",
+            "type": "Chemical spill",
+            "subtype": "Chemical spill",
+            "slug": "chemical-spill"
+        }
+    },
+    {
+        "model": "app.hazard",
+        "fields": {
+            "key": "tec-ind-col-col",
+            "group": "Technological",
+            "subgroup": "Industrial accident",
+            "type": "Collapse (Industrial)",
+            "subtype": "Collapse (Industrial)",
+            "slug": "collapse-industrial"
+        }
+    },
+    {
+        "model": "app.hazard",
+        "fields": {
+            "key": "tec-ind-exp-exp",
+            "group": "Technological",
+            "subgroup": "Industrial accident",
+            "type": "Explosion (Industrial)",
+            "subtype": "Explosion (Industrial)",
+            "slug": "explosion-industrial"
+        }
+    },
+    {
+        "model": "app.hazard",
+        "fields": {
+            "key": "tec-ind-fir-fir",
+            "group": "Technological",
+            "subgroup": "Industrial accident",
+            "type": "Fire (Industrial)",
+            "subtype": "Fire (Industrial)",
+            "slug": "fire-industrial"
+        }
+    },
+    {
+        "model": "app.hazard",
+        "fields": {
+            "key": "tec-ind-gas-gas",
+            "group": "Technological",
+            "subgroup": "Industrial accident",
+            "type": "Gas leak",
+            "subtype": "Gas leak",
+            "slug": "gas-leak"
+        }
+    },
+    {
+        "model": "app.hazard",
+        "fields": {
+            "key": "tec-ind-ind-ind",
+            "group": "Technological",
+            "subgroup": "Industrial accident",
+            "type": "Industrial accident (General)",
+            "subtype": "Industrial accident (General)",
+            "slug": "industrial-accident-general"
+        }
+    },
+    {
+        "model": "app.hazard",
+        "fields": {
+            "key": "tec-ind-oil-oil",
+            "group": "Technological",
+            "subgroup": "Industrial accident",
+            "type": "Oil spill",
+            "subtype": "Oil spill",
+            "slug": "oil-spill"
+        }
+    },
+    {
+        "model": "app.hazard",
+        "fields": {
+            "key": "tec-ind-poi-poi",
+            "group": "Technological",
+            "subgroup": "Industrial accident",
+            "type": "Poisoning",
+            "subtype": "Poisoning",
+            "slug": "poisoning"
+        }
+    },
+    {
+        "model": "app.hazard",
+        "fields": {
+            "key": "tec-ind-rad-rad",
+            "group": "Technological",
+            "subgroup": "Industrial accident",
+            "type": "Radiation",
+            "subtype": "Radiation",
+            "slug": "radiation"
+        }
+    },
+    {
+        "model": "app.hazard",
+        "fields": {
+            "key": "tec-mis-col-col",
+            "group": "Technological",
+            "subgroup": "Miscellaneous accident",
+            "type": "Collapse (Miscellaneous)",
+            "subtype": "Collapse (Miscellaneous)",
+            "slug": "collapse-miscellaneous"
+        }
+    },
+    {
+        "model": "app.hazard",
+        "fields": {
+            "key": "tec-mis-exp-exp",
+            "group": "Technological",
+            "subgroup": "Miscellaneous accident",
+            "type": "Explosion (Miscellaneous)",
+            "subtype": "Explosion (Miscellaneous)",
+            "slug": "explosion-miscellaneous"
+        }
+    },
+    {
+        "model": "app.hazard",
+        "fields": {
+            "key": "tec-mis-fir-fir",
+            "group": "Technological",
+            "subgroup": "Miscellaneous accident",
+            "type": "Fire (Miscellaneous)",
+            "subtype": "Fire (Miscellaneous)",
+            "slug": "fire-miscellaneous"
+        }
+    },
+    {
+        "model": "app.hazard",
+        "fields": {
+            "key": "tec-mis-mis-mis",
+            "group": "Technological",
+            "subgroup": "Miscellaneous accident",
+            "type": "Miscellaneous accident (General)",
+            "subtype": "Miscellaneous accident (General)",
+            "slug": "miscellaneous-accident-general"
+        }
+    },
+    {
+        "model": "app.hazard",
+        "fields": {
+            "key": "tec-tra-air-air",
+            "group": "Technological",
+            "subgroup": "Transport",
+            "type": "Air",
+            "subtype": "Air",
+            "slug": "air"
+        }
+    },
+    {
+        "model": "app.hazard",
+        "fields": {
+            "key": "tec-tra-rai-rai",
+            "group": "Technological",
+            "subgroup": "Transport",
+            "type": "Rail",
+            "subtype": "Rail",
+            "slug": "rail"
+        }
+    },
+    {
+        "model": "app.hazard",
+        "fields": {
+            "key": "tec-tra-roa-roa",
+            "group": "Technological",
+            "subgroup": "Transport",
+            "type": "Road",
+            "subtype": "Road",
+            "slug": "road"
+        }
+    },
+    {
+        "model": "app.hazard",
+        "fields": {
+            "key": "tec-tra-wat-wat",
+            "group": "Technological",
+            "subgroup": "Transport",
+            "type": "Water",
+            "subtype": "Water",
+            "slug": "water"
+        }
+    }
+]

@@ -1,0 +1,10 @@
+{% extends "app/layouts/base.html" %}
+{% load django_bootstrap5 %}
+{% block page %}
+{% include 'app/components/navbar.html' %}
+<div class="container py-4 flex-grow-1">
+{% bootstrap_messages %}
+{% block content %}{% endblock %}
+</div>
+{% include 'app/components/footer.html' %}
+{% endblock %}

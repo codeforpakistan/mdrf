@@ -1,0 +1,41 @@
+{% extends "app/layouts/page.html" %} 
+{% block content %}
+<article>
+  <header>
+    <h1>
+      Issues
+      <a class="btn btn-success btn-sm float-end" href="{% url 'admin:app_issue_add' %}">Report Issue</a>
+    </h1>
+    <p class="lead">Public reported issues, providing valuable additional details to each disaster</p>
+  </header>
+  <table class="table table-hover table-striped">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Title</th>
+        <th scope="col">Disaster</th>
+        <th scope="col">Hazard</th>
+        <th scope="col">Location</th>
+        <th scope="col">Status</th>
+        <th scope="col">User</th>
+        <th scope="col">Reported</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for issue in issues %}
+      <tr>
+        <th scope="row">{{ issue.id }}</th>
+        <td><a href="{% url 'issue_detail' issue.id %}">{{ issue.title }}</a></td>
+        <td>{{ issue.disaster.name }}</td>
+        <td>{% if issue.disaster.hazard %}{{ issue.disaster.hazard.name }}{% else %}{{ issue.hazards.all|join:", "|default:"Not Specified" }}{% endif %}</td>
+        <td>{{ issue.location }}</td>
+        <td>{{ issue.status }}</td>
+        <td>{{ issue.user.username }}</td>
+        <td>{{ issue.created_at }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+</article>
+{% endblock %}

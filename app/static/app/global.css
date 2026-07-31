@@ -1,0 +1,13 @@
+html, body { 
+    height: 100%;
+    /* font-size: 14px; */
+    /* letter-spacing: -0.125px; */
+}
+
+/* :root {
+    --bs-body-font-size: 0.875rem;
+} */
+
+.triangles {
+    background: url('background.svg') center center;
+}

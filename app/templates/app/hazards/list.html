@@ -1,0 +1,27 @@
+{% extends "app/layouts/page.html" %} 
+{% load mptt_tags %} 
+{% load extras %}
+{% block content %}
+<article>
+  <h1>Hazards</h1>
+  <p class="lead">Select a hazard to see localized, step-by-step guidance for keeping your family safe.</p>
+  <div class="row row-cols-1 row-cols-md-2 g-4">
+    {% recursetree hazards %} 
+      
+        <div class="col">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">
+                <a href="{{ node.get_absolute_url }}" class="list-group-item list-group-item-action">{{ node.name }}</a>
+              </h5>
+              <p class="card-text">{{ node.summary|safe }}</p>
+            </div>
+          </div>
+        </div>
+      {% if node.is_leaf_node %}
+        {{ children }} 
+      {% endif %} 
+    {% endrecursetree %}
+  </div>
+</article>
+{% endblock %}

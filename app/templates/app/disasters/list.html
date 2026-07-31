@@ -1,0 +1,27 @@
+{% extends "app/layouts/page.html" %}
+{% load leaflet_tags %}
+{% block scripts %}{% leaflet_js %}{% endblock %}
+{% block styles %}{% leaflet_css %}{% endblock %}
+{% block content %}
+<article>
+    <h1>Disasters</h1>
+    {% comment %} <div class="list-group">
+        {% for disaster in disasters %}
+            <a href="{% url 'disaster' disaster.id %}" class="list-group-item list-group-item-action">{{ disaster.name }}</a>
+        {% empty %}
+            <p class="">No data available.</p>
+        {% endfor %}
+    </div> {% endcomment %}
+</article>
+{% leaflet_map "yourmap" callback="window.map_init_basic" %}
+
+<script>
+function map_init_basic (map, options) {
+    const points = {{ locations | safe }}
+    points.forEach(x => {
+        L.marker([x.locations__latitude, x.locations__longitude]).addTo(map)
+    })
+    {% comment %} L.marker([50.5, 30.5]).addTo(map); {% endcomment %}
+}
+</script>
+{% endblock %}

@@ -1,0 +1,1487 @@
+[
+    {
+        "model": "app.hazard",
+        "pk": 1,
+        "fields": {
+            "name": "Natural",
+            "slug": "natural",
+            "description": "",
+            "is_visible": true,
+            "parent": null,
+            "lft": 1,
+            "rght": 156,
+            "tree_id": 1,
+            "level": 0
+        }
+    },
+    {
+        "model": "app.hazard",
+        "pk": 2,
+        "fields": {
+            "name": "Technical",
+            "slug": "technical",
+            "description": "",
+            "is_visible": true,
+            "parent": null,
+            "lft": 1,
+            "rght": 42,
+            "tree_id": 2,
+            "level": 0
+        }
+    },
+    {
+        "model": "app.hazard",
+        "pk": 3,
+        "fields": {
+            "name": "Biological",
+            "slug": "biological",
+            "description": "",
+            "is_visible": true,
+            "parent": 1,
+            "lft": 2,
+            "rght": 29,
+            "tree_id": 1,
+            "level": 1
+        }
+    },
+    {
+        "model": "app.hazard",
+        "pk": 4,
+        "fields": {
+            "name": "Climatological",
+            "slug": "climatological",
+            "description": "",
+            "is_visible": true,
+            "parent": 1,
+            "lft": 30,
+            "rght": 43,
+            "tree_id": 1,
+            "level": 1
+        }
+    },
+    {
+        "model": "app.hazard",
+        "pk": 5,
+        "fields": {
+            "name": "Extra-terrestrial",
+            "slug": "extra-terrestrial",
+            "description": "",
+            "is_visible": true,
+            "parent": 1,
+            "lft": 44,
+            "rght": 61,
+            "tree_id": 1,
+            "level": 1
+        }
+    },
+    {
+        "model": "app.hazard",
+        "pk": 6,
+        "fields": {
+            "name": "Geophysical",
+            "slug": "geophysical",
+            "description": "",
+            "is_visible": true,
+            "parent": 1,
+            "lft": 62,
+            "rght": 91,
+            "tree_id": 1,
+            "level": 1
+        }
+    },
+    {
+        "model": "app.hazard",
+        "pk": 7,
+        "fields": {
+            "name": "Hydrological",
+            "slug": "hydrological",
+            "description": "",
+            "is_visible": true,
+            "parent": 1,
+            "lft": 92,
+            "rght": 121,
+            "tree_id": 1,
+            "level": 1
+        }
+    },
+    {
+        "model": "app.hazard",
+        "pk": 8,
+        "fields": {
+            "name": "Meteorological",
+            "slug": "meteorological",
+            "description": "",
+            "is_visible": true,
+            "parent": 1,
+            "lft": 122,
+            "rght": 155,
+            "tree_id": 1,
+            "level": 1
+        }
+    },
+    {
+        "model": "app.hazard",
+        "pk": 9,
+        "fields": {
+            "name": "Industrial accident",
+            "slug": "industrial-accident",
+            "description": "",
+            "is_visible": true,
+            "parent": 2,
+            "lft": 2,
+            "rght": 21,
+            "tree_id": 2,
+            "level": 1
+        }
+    },
+    {
+        "model": "app.hazard",
+        "pk": 10,
+        "fields": {
+            "name": "Miscellaneous accident",
+            "slug": "miscellaneous-accident",
+            "description": "",
+            "is_visible": true,
+            "parent": 2,
+            "lft": 22,
+            "rght": 31,
+            "tree_id": 2,
+            "level": 1
+        }
+    },
+    {
+        "model": "app.hazard",
+        "pk": 11,
+        "fields": {
+            "name": "Transport",
+            "slug": "transport",
+            "description": "",
+            "is_visible": true,
+            "parent": 2,
+            "lft": 32,
+            "rght": 41,
+            "tree_id": 2,
+            "level": 1
+        }
+    },
+    {
+        "model": "app.hazard",
+        "pk": 12,
+        "fields": {
+            "name": "Animal incident",
+            "slug": "animal-incident",
+            "description": "",
+            "is_visible": true,
+            "parent": 3,
+            "lft": 3,
+            "rght": 4,
+            "tree_id": 1,
+            "level": 2
+        }
+    },
+    {
+        "model": "app.hazard",
+        "pk": 13,
+        "fields": {
+            "name": "Epidemic",
+            "slug": "epidemic",
+            "description": "",
+            "is_visible": true,
+            "parent": 3,
+            "lft": 5,
+            "rght": 18,
+            "tree_id": 1,
+            "level": 2
+        }
+    },
+    {
+        "model": "app.hazard",
+        "pk": 14,
+        "fields": {
+            "name": "Infestation",
+            "slug": "infestation",
+            "description": "",
+            "is_visible": true,
+            "parent": 3,
+            "lft": 19,
+            "rght": 28,
+            "tree_id": 1,
+            "level": 2
+        }
+    },
+    {
+        "model": "app.hazard",
+        "pk": 15,
+        "fields": {
+            "name": "Drought",
+            "slug": "drought",
+            "description": "",
+            "is_visible": true,
+            "parent": 4,
+            "lft": 31,
+            "rght": 32,
+            "tree_id": 1,
+            "level": 2
+        }
+    },
+    {
+        "model": "app.hazard",
+        "pk": 16,
+        "fields": {
+            "name": "Glacial lake outburst flood",
+            "slug": "glacial-lake-outburst-flood",
+            "description": "",
+            "is_visible": true,
+            "parent": 4,
+            "lft": 33,
+            "rght": 34,
+            "tree_id": 1,
+            "level": 2
+        }
+    },
+    {
+        "model": "app.hazard",
+        "pk": 17,
+        "fields": {
+            "name": "Wildfire",
+            "slug": "wildfire",
+            "description": "",
+            "is_visible": true,
+            "parent": 4,
+            "lft": 35,
+            "rght": 42,
+            "tree_id": 1,
+            "level": 2
+        }
+    },
+    {
+        "model": "app.hazard",
+        "pk": 18,
+        "fields": {
+            "name": "Impact",
+            "slug": "impact",
+            "description": "",
+            "is_visible": true,
+            "parent": 5,
+            "lft": 45,
+            "rght": 50,
+            "tree_id": 1,
+            "level": 2
+        }
+    },
+    {
+        "model": "app.hazard",
+        "pk": 19,
+        "fields": {
+            "name": "Space weather",
+            "slug": "space-weather",
+            "description": "",
+            "is_visible": true,
+            "parent": 5,
+            "lft": 51,
+            "rght": 60,
+            "tree_id": 1,
+            "level": 2
+        }
+    },
+    {
+        "model": "app.hazard",
+        "pk": 20,
+        "fields": {
+            "name": "Earthquake",
+            "slug": "earthquake",
+            "description": "",
+            "is_visible": true,
+            "parent": 6,
+            "lft": 63,
+            "rght": 68,
+            "tree_id": 1,
+            "level": 2
+        }
+    },
+    {
+        "model": "app.hazard",
+        "pk": 21,
+        "fields": {
+            "name": "Mass movement (dry)",
+            "slug": "mass-movement-dry",
+            "description": "",
+            "is_visible": true,
+            "parent": 6,
+            "lft": 69,
+            "rght": 78,
+            "tree_id": 1,
+            "level": 2
+        }
+    },
+    {
+        "model": "app.hazard",
+        "pk": 22,
+        "fields": {
+            "name": "Volcanic activity",
+            "slug": "volcanic-activity",
+            "description": "",
+            "is_visible": true,
+            "parent": 6,
+            "lft": 79,
+            "rght": 90,
+            "tree_id": 1,
+            "level": 2
+        }
+    },
+    {
+        "model": "app.hazard",
+        "pk": 23,
+        "fields": {
+            "name": "Flood",
+            "slug": "flood",
+            "description": "",
+            "is_visible": true,
+            "parent": 7,
+            "lft": 93,
+            "rght": 102,
+            "tree_id": 1,
+            "level": 2
+        }
+    },
+    {
+        "model": "app.hazard",
+        "pk": 24,
+        "fields": {
+            "name": "Mass movement (wet)",
+            "slug": "mass-movement-wet",
+            "description": "",
+            "is_visible": true,
+            "parent": 7,
+            "lft": 103,
+            "rght": 114,
+            "tree_id": 1,
+            "level": 2
+        }
+    },
+    {
+        "model": "app.hazard",
+        "pk": 25,
+        "fields": {
+            "name": "Wave action",
+            "slug": "wave-action",
+            "description": "",
+            "is_visible": true,
+            "parent": 7,
+            "lft": 115,
+            "rght": 120,
+            "tree_id": 1,
+            "level": 2
+        }
+    },
+    {
+        "model": "app.hazard",
+        "pk": 26,
+        "fields": {
+            "name": "Extreme temperature",
+            "slug": "extreme-temperature",
+            "description": "",
+            "is_visible": true,
+            "parent": 8,
+            "lft": 123,
+            "rght": 130,
+            "tree_id": 1,
+            "level": 2
+        }
+    },
+    {
+        "model": "app.hazard",
+        "pk": 27,
+        "fields": {
+            "name": "Fog",
+            "slug": "fog",
+            "description": "",
+            "is_visible": true,
+            "parent": 8,
+            "lft": 131,
+            "rght": 132,
+            "tree_id": 1,
+            "level": 2
+        }
+    },
+    {
+        "model": "app.hazard",
+        "pk": 28,
+        "fields": {
+            "name": "Storm",
+            "slug": "storm",
+            "description": "",
+            "is_visible": true,
+            "parent": 8,
+            "lft": 133,
+            "rght": 154,
+            "tree_id": 1,
+            "level": 2
+        }
+    },
+    {
+        "model": "app.hazard",
+        "pk": 29,
+        "fields": {
+            "name": "Chemical spill",
+            "slug": "chemical-spill",
+            "description": "",
+            "is_visible": true,
+            "parent": 9,
+            "lft": 3,
+            "rght": 4,
+            "tree_id": 2,
+            "level": 2
+        }
+    },
+    {
+        "model": "app.hazard",
+        "pk": 30,
+        "fields": {
+            "name": "Collapse (Industrial)",
+            "slug": "collapse-industrial",
+            "description": "",
+            "is_visible": true,
+            "parent": 9,
+            "lft": 5,
+            "rght": 6,
+            "tree_id": 2,
+            "level": 2
+        }
+    },
+    {
+        "model": "app.hazard",
+        "pk": 31,
+        "fields": {
+            "name": "Explosion (Industrial)",
+            "slug": "explosion-industrial",
+            "description": "",
+            "is_visible": true,
+            "parent": 9,
+            "lft": 7,
+            "rght": 8,
+            "tree_id": 2,
+            "level": 2
+        }
+    },
+    {
+        "model": "app.hazard",
+        "pk": 32,
+        "fields": {
+            "name": "Fire (Industrial)",
+            "slug": "fire-industrial",
+            "description": "",
+            "is_visible": true,
+            "parent": 9,
+            "lft": 9,
+            "rght": 10,
+            "tree_id": 2,
+            "level": 2
+        }
+    },
+    {
+        "model": "app.hazard",
+        "pk": 33,
+        "fields": {
+            "name": "Gas leak",
+            "slug": "gas-leak",
+            "description": "",
+            "is_visible": true,
+            "parent": 9,
+            "lft": 11,
+            "rght": 12,
+            "tree_id": 2,
+            "level": 2
+        }
+    },
+    {
+        "model": "app.hazard",
+        "pk": 34,
+        "fields": {
+            "name": "Industrial accident (General)",
+            "slug": "industrial-accident-general",
+            "description": "",
+            "is_visible": true,
+            "parent": 9,
+            "lft": 13,
+            "rght": 14,
+            "tree_id": 2,
+            "level": 2
+        }
+    },
+    {
+        "model": "app.hazard",
+        "pk": 35,
+        "fields": {
+            "name": "Oil spill",
+            "slug": "oil-spill",
+            "description": "",
+            "is_visible": true,
+            "parent": 9,
+            "lft": 15,
+            "rght": 16,
+            "tree_id": 2,
+            "level": 2
+        }
+    },
+    {
+        "model": "app.hazard",
+        "pk": 36,
+        "fields": {
+            "name": "Poisoning",
+            "slug": "poisoning",
+            "description": "",
+            "is_visible": true,
+            "parent": 9,
+            "lft": 17,
+            "rght": 18,
+            "tree_id": 2,
+            "level": 2
+        }
+    },
+    {
+        "model": "app.hazard",
+        "pk": 37,
+        "fields": {
+            "name": "Radiation",
+            "slug": "radiation",
+            "description": "",
+            "is_visible": true,
+            "parent": 9,
+            "lft": 19,
+            "rght": 20,
+            "tree_id": 2,
+            "level": 2
+        }
+    },
+    {
+        "model": "app.hazard",
+        "pk": 38,
+        "fields": {
+            "name": "Collapse (Miscellaneous)",
+            "slug": "collapse-miscellaneous",
+            "description": "",
+            "is_visible": true,
+            "parent": 10,
+            "lft": 23,
+            "rght": 24,
+            "tree_id": 2,
+            "level": 2
+        }
+    },
+    {
+        "model": "app.hazard",
+        "pk": 39,
+        "fields": {
+            "name": "Explosion (Miscellaneous)",
+            "slug": "explosion-miscellaneous",
+            "description": "",
+            "is_visible": true,
+            "parent": 10,
+            "lft": 25,
+            "rght": 26,
+            "tree_id": 2,
+            "level": 2
+        }
+    },
+    {
+        "model": "app.hazard",
+        "pk": 40,
+        "fields": {
+            "name": "Fire (Miscellaneous)",
+            "slug": "fire-miscellaneous",
+            "description": "",
+            "is_visible": true,
+            "parent": 10,
+            "lft": 27,
+            "rght": 28,
+            "tree_id": 2,
+            "level": 2
+        }
+    },
+    {
+        "model": "app.hazard",
+        "pk": 41,
+        "fields": {
+            "name": "Miscellaneous accident (General)",
+            "slug": "miscellaneous-accident-general",
+            "description": "",
+            "is_visible": true,
+            "parent": 10,
+            "lft": 29,
+            "rght": 30,
+            "tree_id": 2,
+            "level": 2
+        }
+    },
+    {
+        "model": "app.hazard",
+        "pk": 42,
+        "fields": {
+            "name": "Air",
+            "slug": "air",
+            "description": "",
+            "is_visible": true,
+            "parent": 11,
+            "lft": 33,
+            "rght": 34,
+            "tree_id": 2,
+            "level": 2
+        }
+    },
+    {
+        "model": "app.hazard",
+        "pk": 43,
+        "fields": {
+            "name": "Rail",
+            "slug": "rail",
+            "description": "",
+            "is_visible": true,
+            "parent": 11,
+            "lft": 35,
+            "rght": 36,
+            "tree_id": 2,
+            "level": 2
+        }
+    },
+    {
+        "model": "app.hazard",
+        "pk": 44,
+        "fields": {
+            "name": "Road",
+            "slug": "road",
+            "description": "",
+            "is_visible": true,
+            "parent": 11,
+            "lft": 37,
+            "rght": 38,
+            "tree_id": 2,
+            "level": 2
+        }
+    },
+    {
+        "model": "app.hazard",
+        "pk": 45,
+        "fields": {
+            "name": "Water",
+            "slug": "water",
+            "description": "",
+            "is_visible": true,
+            "parent": 11,
+            "lft": 39,
+            "rght": 40,
+            "tree_id": 2,
+            "level": 2
+        }
+    },
+    {
+        "model": "app.hazard",
+        "pk": 46,
+        "fields": {
+            "name": "Bacterial disease",
+            "slug": "bacterial-disease",
+            "description": "",
+            "is_visible": true,
+            "parent": 13,
+            "lft": 6,
+            "rght": 7,
+            "tree_id": 1,
+            "level": 3
+        }
+    },
+    {
+        "model": "app.hazard",
+        "pk": 47,
+        "fields": {
+            "name": "Infectious disease (General)",
+            "slug": "infectious-disease-general",
+            "description": "",
+            "is_visible": true,
+            "parent": 13,
+            "lft": 8,
+            "rght": 9,
+            "tree_id": 1,
+            "level": 3
+        }
+    },
+    {
+        "model": "app.hazard",
+        "pk": 48,
+        "fields": {
+            "name": "Fungal disease",
+            "slug": "fungal-disease",
+            "description": "",
+            "is_visible": true,
+            "parent": 13,
+            "lft": 10,
+            "rght": 11,
+            "tree_id": 1,
+            "level": 3
+        }
+    },
+    {
+        "model": "app.hazard",
+        "pk": 49,
+        "fields": {
+            "name": "Parasitic disease",
+            "slug": "parasitic-disease",
+            "description": "",
+            "is_visible": true,
+            "parent": 13,
+            "lft": 12,
+            "rght": 13,
+            "tree_id": 1,
+            "level": 3
+        }
+    },
+    {
+        "model": "app.hazard",
+        "pk": 50,
+        "fields": {
+            "name": "Prion disease",
+            "slug": "prion-disease",
+            "description": "",
+            "is_visible": true,
+            "parent": 13,
+            "lft": 14,
+            "rght": 15,
+            "tree_id": 1,
+            "level": 3
+        }
+    },
+    {
+        "model": "app.hazard",
+        "pk": 51,
+        "fields": {
+            "name": "Viral disease",
+            "slug": "viral-disease",
+            "description": "",
+            "is_visible": true,
+            "parent": 13,
+            "lft": 16,
+            "rght": 17,
+            "tree_id": 1,
+            "level": 3
+        }
+    },
+    {
+        "model": "app.hazard",
+        "pk": 52,
+        "fields": {
+            "name": "Grasshopper infestation",
+            "slug": "grasshopper-infestation",
+            "description": "",
+            "is_visible": true,
+            "parent": 14,
+            "lft": 20,
+            "rght": 21,
+            "tree_id": 1,
+            "level": 3
+        }
+    },
+    {
+        "model": "app.hazard",
+        "pk": 53,
+        "fields": {
+            "name": "Infestation (General)",
+            "slug": "infestation-general",
+            "description": "",
+            "is_visible": true,
+            "parent": 14,
+            "lft": 22,
+            "rght": 23,
+            "tree_id": 1,
+            "level": 3
+        }
+    },
+    {
+        "model": "app.hazard",
+        "pk": 54,
+        "fields": {
+            "name": "Locust infestation",
+            "slug": "locust-infestation",
+            "description": "",
+            "is_visible": true,
+            "parent": 14,
+            "lft": 24,
+            "rght": 25,
+            "tree_id": 1,
+            "level": 3
+        }
+    },
+    {
+        "model": "app.hazard",
+        "pk": 55,
+        "fields": {
+            "name": "Worms infestation",
+            "slug": "worms-infestation",
+            "description": "",
+            "is_visible": true,
+            "parent": 14,
+            "lft": 26,
+            "rght": 27,
+            "tree_id": 1,
+            "level": 3
+        }
+    },
+    {
+        "model": "app.hazard",
+        "pk": 56,
+        "fields": {
+            "name": "Forest fire",
+            "slug": "forest-fire",
+            "description": "",
+            "is_visible": true,
+            "parent": 17,
+            "lft": 36,
+            "rght": 37,
+            "tree_id": 1,
+            "level": 3
+        }
+    },
+    {
+        "model": "app.hazard",
+        "pk": 57,
+        "fields": {
+            "name": "Land fire (Brush, Bush, Pasture)",
+            "slug": "land-fire-brush-bush-pasture",
+            "description": "",
+            "is_visible": true,
+            "parent": 17,
+            "lft": 38,
+            "rght": 39,
+            "tree_id": 1,
+            "level": 3
+        }
+    },
+    {
+        "model": "app.hazard",
+        "pk": 58,
+        "fields": {
+            "name": "Wildfire (General)",
+            "slug": "wildfire-general",
+            "description": "",
+            "is_visible": true,
+            "parent": 17,
+            "lft": 40,
+            "rght": 41,
+            "tree_id": 1,
+            "level": 3
+        }
+    },
+    {
+        "model": "app.hazard",
+        "pk": 59,
+        "fields": {
+            "name": "Airburst",
+            "slug": "airburst",
+            "description": "",
+            "is_visible": true,
+            "parent": 18,
+            "lft": 46,
+            "rght": 47,
+            "tree_id": 1,
+            "level": 3
+        }
+    },
+    {
+        "model": "app.hazard",
+        "pk": 60,
+        "fields": {
+            "name": "Collision",
+            "slug": "collision",
+            "description": "",
+            "is_visible": true,
+            "parent": 18,
+            "lft": 48,
+            "rght": 49,
+            "tree_id": 1,
+            "level": 3
+        }
+    },
+    {
+        "model": "app.hazard",
+        "pk": 61,
+        "fields": {
+            "name": "Energetic particles",
+            "slug": "energetic-particles",
+            "description": "",
+            "is_visible": true,
+            "parent": 19,
+            "lft": 52,
+            "rght": 53,
+            "tree_id": 1,
+            "level": 3
+        }
+    },
+    {
+        "model": "app.hazard",
+        "pk": 62,
+        "fields": {
+            "name": "Geomagnetic storm",
+            "slug": "geomagnetic-storm",
+            "description": "",
+            "is_visible": true,
+            "parent": 19,
+            "lft": 54,
+            "rght": 55,
+            "tree_id": 1,
+            "level": 3
+        }
+    },
+    {
+        "model": "app.hazard",
+        "pk": 63,
+        "fields": {
+            "name": "Radio disturbance",
+            "slug": "radio-disturbance",
+            "description": "",
+            "is_visible": true,
+            "parent": 19,
+            "lft": 56,
+            "rght": 57,
+            "tree_id": 1,
+            "level": 3
+        }
+    },
+    {
+        "model": "app.hazard",
+        "pk": 64,
+        "fields": {
+            "name": "Shockwave",
+            "slug": "shockwave",
+            "description": "",
+            "is_visible": true,
+            "parent": 19,
+            "lft": 58,
+            "rght": 59,
+            "tree_id": 1,
+            "level": 3
+        }
+    },
+    {
+        "model": "app.hazard",
+        "pk": 65,
+        "fields": {
+            "name": "Ground movement",
+            "slug": "ground-movement",
+            "description": "",
+            "is_visible": true,
+            "parent": 20,
+            "lft": 64,
+            "rght": 65,
+            "tree_id": 1,
+            "level": 3
+        }
+    },
+    {
+        "model": "app.hazard",
+        "pk": 66,
+        "fields": {
+            "name": "Tsunami",
+            "slug": "tsunami",
+            "description": "",
+            "is_visible": true,
+            "parent": 20,
+            "lft": 66,
+            "rght": 67,
+            "tree_id": 1,
+            "level": 3
+        }
+    },
+    {
+        "model": "app.hazard",
+        "pk": 67,
+        "fields": {
+            "name": "Avalanche (dry)",
+            "slug": "avalanche-dry",
+            "description": "",
+            "is_visible": true,
+            "parent": 21,
+            "lft": 70,
+            "rght": 71,
+            "tree_id": 1,
+            "level": 3
+        }
+    },
+    {
+        "model": "app.hazard",
+        "pk": 68,
+        "fields": {
+            "name": "Landslide (dry)",
+            "slug": "landslide-dry",
+            "description": "",
+            "is_visible": true,
+            "parent": 21,
+            "lft": 72,
+            "rght": 73,
+            "tree_id": 1,
+            "level": 3
+        }
+    },
+    {
+        "model": "app.hazard",
+        "pk": 69,
+        "fields": {
+            "name": "Rockfall (dry)",
+            "slug": "rockfall-dry",
+            "description": "",
+            "is_visible": true,
+            "parent": 21,
+            "lft": 74,
+            "rght": 75,
+            "tree_id": 1,
+            "level": 3
+        }
+    },
+    {
+        "model": "app.hazard",
+        "pk": 70,
+        "fields": {
+            "name": "Sudden Subsidence (dry)",
+            "slug": "sudden-subsidence-dry",
+            "description": "",
+            "is_visible": true,
+            "parent": 21,
+            "lft": 76,
+            "rght": 77,
+            "tree_id": 1,
+            "level": 3
+        }
+    },
+    {
+        "model": "app.hazard",
+        "pk": 71,
+        "fields": {
+            "name": "Ash fall",
+            "slug": "ash-fall",
+            "description": "",
+            "is_visible": true,
+            "parent": 22,
+            "lft": 80,
+            "rght": 81,
+            "tree_id": 1,
+            "level": 3
+        }
+    },
+    {
+        "model": "app.hazard",
+        "pk": 72,
+        "fields": {
+            "name": "Lahar",
+            "slug": "lahar",
+            "description": "",
+            "is_visible": true,
+            "parent": 22,
+            "lft": 82,
+            "rght": 83,
+            "tree_id": 1,
+            "level": 3
+        }
+    },
+    {
+        "model": "app.hazard",
+        "pk": 73,
+        "fields": {
+            "name": "Lava flow",
+            "slug": "lava-flow",
+            "description": "",
+            "is_visible": true,
+            "parent": 22,
+            "lft": 84,
+            "rght": 85,
+            "tree_id": 1,
+            "level": 3
+        }
+    },
+    {
+        "model": "app.hazard",
+        "pk": 74,
+        "fields": {
+            "name": "Pyroclastic flow",
+            "slug": "pyroclastic-flow",
+            "description": "",
+            "is_visible": true,
+            "parent": 22,
+            "lft": 86,
+            "rght": 87,
+            "tree_id": 1,
+            "level": 3
+        }
+    },
+    {
+        "model": "app.hazard",
+        "pk": 75,
+        "fields": {
+            "name": "Volcanic activity (General)",
+            "slug": "volcanic-activity-general",
+            "description": "",
+            "is_visible": true,
+            "parent": 22,
+            "lft": 88,
+            "rght": 89,
+            "tree_id": 1,
+            "level": 3
+        }
+    },
+    {
+        "model": "app.hazard",
+        "pk": 76,
+        "fields": {
+            "name": "Coastal flood",
+            "slug": "coastal-flood",
+            "description": "",
+            "is_visible": true,
+            "parent": 23,
+            "lft": 94,
+            "rght": 95,
+            "tree_id": 1,
+            "level": 3
+        }
+    },
+    {
+        "model": "app.hazard",
+        "pk": 77,
+        "fields": {
+            "name": "Flash flood",
+            "slug": "flash-flood",
+            "description": "",
+            "is_visible": true,
+            "parent": 23,
+            "lft": 96,
+            "rght": 97,
+            "tree_id": 1,
+            "level": 3
+        }
+    },
+    {
+        "model": "app.hazard",
+        "pk": 78,
+        "fields": {
+            "name": "Ice jam flood",
+            "slug": "ice-jam-flood",
+            "description": "",
+            "is_visible": true,
+            "parent": 23,
+            "lft": 98,
+            "rght": 99,
+            "tree_id": 1,
+            "level": 3
+        }
+    },
+    {
+        "model": "app.hazard",
+        "pk": 79,
+        "fields": {
+            "name": "Riverine flood",
+            "slug": "riverine-flood",
+            "description": "",
+            "is_visible": true,
+            "parent": 23,
+            "lft": 100,
+            "rght": 101,
+            "tree_id": 1,
+            "level": 3
+        }
+    },
+    {
+        "model": "app.hazard",
+        "pk": 80,
+        "fields": {
+            "name": "Avalanche (wet)",
+            "slug": "avalanche-wet",
+            "description": "",
+            "is_visible": true,
+            "parent": 24,
+            "lft": 104,
+            "rght": 105,
+            "tree_id": 1,
+            "level": 3
+        }
+    },
+    {
+        "model": "app.hazard",
+        "pk": 81,
+        "fields": {
+            "name": "Landslide (wet)",
+            "slug": "landslide-wet",
+            "description": "",
+            "is_visible": true,
+            "parent": 24,
+            "lft": 106,
+            "rght": 107,
+            "tree_id": 1,
+            "level": 3
+        }
+    },
+    {
+        "model": "app.hazard",
+        "pk": 82,
+        "fields": {
+            "name": "Mudslide",
+            "slug": "mudslide",
+            "description": "",
+            "is_visible": true,
+            "parent": 24,
+            "lft": 108,
+            "rght": 109,
+            "tree_id": 1,
+            "level": 3
+        }
+    },
+    {
+        "model": "app.hazard",
+        "pk": 83,
+        "fields": {
+            "name": "Rockfall (wet)",
+            "slug": "rockfall-wet",
+            "description": "",
+            "is_visible": true,
+            "parent": 24,
+            "lft": 110,
+            "rght": 111,
+            "tree_id": 1,
+            "level": 3
+        }
+    },
+    {
+        "model": "app.hazard",
+        "pk": 84,
+        "fields": {
+            "name": "Sudden Subsidence (wet)",
+            "slug": "sudden-subsidence-wet",
+            "description": "",
+            "is_visible": true,
+            "parent": 24,
+            "lft": 112,
+            "rght": 113,
+            "tree_id": 1,
+            "level": 3
+        }
+    },
+    {
+        "model": "app.hazard",
+        "pk": 85,
+        "fields": {
+            "name": "Rogue wave",
+            "slug": "rogue-wave",
+            "description": "",
+            "is_visible": true,
+            "parent": 25,
+            "lft": 116,
+            "rght": 117,
+            "tree_id": 1,
+            "level": 3
+        }
+    },
+    {
+        "model": "app.hazard",
+        "pk": 86,
+        "fields": {
+            "name": "Seiche",
+            "slug": "seiche",
+            "description": "",
+            "is_visible": true,
+            "parent": 25,
+            "lft": 118,
+            "rght": 119,
+            "tree_id": 1,
+            "level": 3
+        }
+    },
+    {
+        "model": "app.hazard",
+        "pk": 87,
+        "fields": {
+            "name": "Cold wave",
+            "slug": "cold-wave",
+            "description": "",
+            "is_visible": true,
+            "parent": 26,
+            "lft": 124,
+            "rght": 125,
+            "tree_id": 1,
+            "level": 3
+        }
+    },
+    {
+        "model": "app.hazard",
+        "pk": 88,
+        "fields": {
+            "name": "Heat wave",
+            "slug": "heat-wave",
+            "description": "",
+            "is_visible": true,
+            "parent": 26,
+            "lft": 126,
+            "rght": 127,
+            "tree_id": 1,
+            "level": 3
+        }
+    },
+    {
+        "model": "app.hazard",
+        "pk": 89,
+        "fields": {
+            "name": "Severe winter conditions",
+            "slug": "severe-winter-conditions",
+            "description": "",
+            "is_visible": true,
+            "parent": 26,
+            "lft": 128,
+            "rght": 129,
+            "tree_id": 1,
+            "level": 3
+        }
+    },
+    {
+        "model": "app.hazard",
+        "pk": 90,
+        "fields": {
+            "name": "Blizzard/Winter storm",
+            "slug": "blizzardwinter-storm",
+            "description": "",
+            "is_visible": true,
+            "parent": 28,
+            "lft": 134,
+            "rght": 135,
+            "tree_id": 1,
+            "level": 3
+        }
+    },
+    {
+        "model": "app.hazard",
+        "pk": 91,
+        "fields": {
+            "name": "Derecho",
+            "slug": "derecho",
+            "description": "",
+            "is_visible": true,
+            "parent": 28,
+            "lft": 136,
+            "rght": 137,
+            "tree_id": 1,
+            "level": 3
+        }
+    },
+    {
+        "model": "app.hazard",
+        "pk": 92,
+        "fields": {
+            "name": "Extra-tropical storm",
+            "slug": "extra-tropical-storm",
+            "description": "",
+            "is_visible": true,
+            "parent": 28,
+            "lft": 138,
+            "rght": 139,
+            "tree_id": 1,
+            "level": 3
+        }
+    },
+    {
+        "model": "app.hazard",
+        "pk": 93,
+        "fields": {
+            "name": "Hail",
+            "slug": "hail",
+            "description": "",
+            "is_visible": true,
+            "parent": 28,
+            "lft": 140,
+            "rght": 141,
+            "tree_id": 1,
+            "level": 3
+        }
+    },
+    {
+        "model": "app.hazard",
+        "pk": 94,
+        "fields": {
+            "name": "Lightning/Thunderstorms",
+            "slug": "lightningthunderstorms",
+            "description": "",
+            "is_visible": true,
+            "parent": 28,
+            "lft": 142,
+            "rght": 143,
+            "tree_id": 1,
+            "level": 3
+        }
+    },
+    {
+        "model": "app.hazard",
+        "pk": 95,
+        "fields": {
+            "name": "Sand/Dust storm",
+            "slug": "sanddust-storm",
+            "description": "",
+            "is_visible": true,
+            "parent": 28,
+            "lft": 144,
+            "rght": 145,
+            "tree_id": 1,
+            "level": 3
+        }
+    },
+    {
+        "model": "app.hazard",
+        "pk": 96,
+        "fields": {
+            "name": "Severe weather",
+            "slug": "severe-weather",
+            "description": "",
+            "is_visible": true,
+            "parent": 28,
+            "lft": 146,
+            "rght": 147,
+            "tree_id": 1,
+            "level": 3
+        }
+    },
+    {
+        "model": "app.hazard",
+        "pk": 97,
+        "fields": {
+            "name": "Storm surge",
+            "slug": "storm-surge",
+            "description": "",
+            "is_visible": true,
+            "parent": 28,
+            "lft": 148,
+            "rght": 149,
+            "tree_id": 1,
+            "level": 3
+        }
+    },
+    {
+        "model": "app.hazard",
+        "pk": 98,
+        "fields": {
+            "name": "Tornado",
+            "slug": "tornado",
+            "description": "",
+            "is_visible": true,
+            "parent": 28,
+            "lft": 150,
+            "rght": 151,
+            "tree_id": 1,
+            "level": 3
+        }
+    },
+    {
+        "model": "app.hazard",
+        "pk": 99,
+        "fields": {
+            "name": "Tropical cyclone",
+            "slug": "tropical-cyclone",
+            "description": "",
+            "is_visible": true,
+            "parent": 28,
+            "lft": 152,
+            "rght": 153,
+            "tree_id": 1,
+            "level": 3
+        }
+    }
+]
