@@ -1,0 +1,14 @@
+server {
+    listen 80;
+    server_name floods.pk;
+
+    location = /favicon.ico { access_log off; log_not_found off; }
+    location /static/ {
+        alias /home/code4pk/mdrf/staticfiles/;
+    }
+
+    location / {
+        include proxy_params;
+        proxy_pass http://unix:/run/mdrf.sock;
+    }
+}
