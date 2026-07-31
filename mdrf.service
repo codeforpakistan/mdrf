@@ -1,0 +1,29 @@
+# /etc/systemd/system/mdrf.service
+
+[Unit]
+Description=MDRF
+Requires=mdrf.socket
+After=network.target
+
+[Service]
+Type=notify
+User=code4pk
+Group=www-data
+WorkingDirectory=/home/code4pk/mdrf
+Environment="PATH=/home/code4pk/mdrf/.venv/bin"
+ExecStart=/home/code4pk/mdrf/.venv/bin/gunicorn project.wsgi:application \
+    --bind 127.0.0.1:8000 \
+    --workers 1 \
+    --timeout 120 \
+    --access-logfile /var/log/mdrf/access.log \
+    --error-logfile /var/log/mdrf/error.log \
+    --log-level info
+ExecReload=/bin/kill -s HUP $MAINPID
+KillMode=mixed
+TimeoutStopSec=5
+PrivateTmp=true
+Restart=on-failure
+RestartSec=5s
+
+[Install]
+WantedBy=multi-user.target

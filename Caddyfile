@@ -1,0 +1,54 @@
+floods.pk {
+    # Enable compression
+    encode gzip zstd
+    
+    # Logs
+    log {
+        output file /var/log/caddy/mdrf.log
+        format json
+    }
+    
+    # Serve static files directly (CSS, JS, images)
+    handle /static/* {
+        root * /home/code4pk/mdrf/staticfiles
+        uri strip_prefix /static
+        file_server {
+            precompressed br gzip
+        }
+        
+        # Cache static files for 1 year (they have content hashes)
+        header Cache-Control "public, max-age=31536000, immutable"
+    }
+    
+    # Serve media files directly (user uploads)
+    handle /media/* {
+        root * /home/code4pk/mdrf/media
+        uri strip_prefix /media
+        file_server {
+            precompressed br gzip
+        }
+        
+        # Cache static files for 1 year (they have content hashes)
+        header Cache-Control "public, max-age=31536000, immutable"
+    }
+    
+    # Serve certificate files
+    handle /certificates/* {
+        root * /home/code4pk/certificates
+        uri strip_prefix /certificates
+        file_server
+        
+        # Cache certificates for 1 week
+        header Cache-Control "public, max-age=604800"
+    }
+    
+    # Proxy everything else to Django/Gunicorn
+    handle {
+        reverse_proxy localhost:8000 {
+            # Better headers
+            header_up X-Forwarded-Proto {scheme}
+            header_up X-Forwarded-For {remote_host}
+            header_up Host {host}
+        }
+    }
+}

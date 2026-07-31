@@ -1,0 +1,10 @@
+# /etc/systemd/system/mdrf.socket
+
+[Unit]
+Description=MDRF socket
+
+[Socket]
+ListenStream=/run/mdrf.sock
+
+[Install]
+WantedBy=sockets.target
