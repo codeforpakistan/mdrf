@@ -196,8 +196,13 @@ REST_FRAMEWORK = {
     ]
 }
 
-GDAL_LIBRARY_PATH = r"C:\Program Files\QGIS 3.34.10\bin\gdal309.dll" 
-GEOS_LIBRARY_PATH = r"C:\Program Files\QGIS 3.34.10\bin\geos_c.dll"
+if DEBUG:
+    GDAL_LIBRARY_PATH = r"C:\Program Files\QGIS 3.34.10\bin\gdal309.dll" 
+    GEOS_LIBRARY_PATH = r"C:\Program Files\QGIS 3.34.10\bin\geos_c.dll"
+# else:
+#     GDAL_LIBRARY_PATH = r"/usr/bin/libgdal.so" 
+#     GEOS_LIBRARY_PATH = r"/usr/bin/libgeos_c.so"
+
 
 LEAFLET_CONFIG = {
     # 'SPATIAL_EXTENT': (23, 60, 37, 78),
