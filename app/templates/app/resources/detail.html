@@ -1,0 +1,20 @@
+{% extends "app/layouts/page.html" %} 
+{% block content %}
+<article>
+  <header>
+    <h1>
+      {{ resource.title }}
+      <a class="btn btn-primary btn-sm float-end" href="{% url 'admin:app_resource_change' resource.id %}">Edit</a>
+    </h1>
+  </header>
+  <p>
+    <strong>Type:</strong>
+    {{ resource.type }}
+  </p>
+  <p>
+    <strong>Location:</strong>
+    {{ resource.locations.all|join:", " }}
+  </p>
+  <section>{{ resource.description|safe }}</section>
+</article>
+{% endblock %}

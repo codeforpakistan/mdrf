@@ -1,13 +1,15 @@
 import os
 from typing import Optional
+
 from allauth.socialaccount.models import SocialApp
 from django.apps import apps
+from django.contrib.auth.models import Group, User
 from django.contrib.sites.models import Site
-from django.core.management.base import BaseCommand
-from django.contrib.auth.models import User, Group, Permission
 from django.core.management import call_command
-from app.models import Hazard
-from app.factories import DisasterFactory
+from django.core.management.base import BaseCommand
+
+from app.factories import DisasterFactory, IssueFactory, ResourceFactory
+
 
 class Command(BaseCommand):
 
@@ -23,6 +25,7 @@ class Command(BaseCommand):
             self.stdout.write(self.style.SUCCESS('Successfully cleaned existing data'))
 
         """Seed inital data"""
+        self.create_admin()
         self.load_fixtures('hazard')
         self.load_fixtures('location')
 
@@ -30,7 +33,6 @@ class Command(BaseCommand):
         for group in groups:
             self.create_group(group)
 
-        self.create_admin()
 
         site = self.create_site()
         social_app, _ = self.create_socials()
@@ -40,7 +42,9 @@ class Command(BaseCommand):
             social_app.sites.add(site)
             self.stdout.write(self.style.SUCCESS(f'Added OAuth app to site: {site.domain}'))
         
-        self.create_disasters(10)
+        self.create_disasters()
+        self.create_resources()
+        self.create_issues()
 
     def create_group(self, group_name):
         if not Group.objects.filter(name=group_name).exists():
@@ -107,4 +111,12 @@ class Command(BaseCommand):
     
     def create_disasters(self, num=10):
         DisasterFactory.create_batch(num)
-        self.stdout.write(self.style.SUCCESS('Successfully created disasters'))
+        self.stdout.write(self.style.SUCCESS(f'Successfully created {num} disasters'))
+
+    def create_resources(self, num=10):
+        ResourceFactory.create_batch(num)
+        self.stdout.write(self.style.SUCCESS(f'Successfully created {num} resources'))
+
+    def create_issues(self, num=10):
+        IssueFactory.create_batch(num)
+        self.stdout.write(self.style.SUCCESS(f'Successfully created {num} issues'))

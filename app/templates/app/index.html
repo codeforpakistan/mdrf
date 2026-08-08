@@ -1,5 +1,111 @@
-{% extends "app/layouts/page.html" %}
-
+{% extends "app/layouts/page.html" %} 
+{% load static %} 
 {% block content %}
-<h1>Welcome</h1>
+
+<h1>Firebase Web Push Setup</h1>
+<button id="enable-notifications" onclick="requestPermission()">Enable Notifications</button>
+
+<!-- Load Firebase via CDN (Ensure versions match the Service Worker) -->
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-messaging-compat.js"></script>
+<script>
+  const firebaseConfig = {
+    apiKey: "AIzaSyCxx_31TkpfXlXiBBc53IjtaNzALqsB-Ac",
+    authDomain: "code4pk.firebaseapp.com",
+    projectId: "code4pk",
+    storageBucket: "code4pk.appspot.com",
+    messagingSenderId: "344151364555",
+    appId: "1:344151364555:web:593724e09714a69f09dc4e",
+  }
+
+  firebase.initializeApp(firebaseConfig);
+  const messaging = firebase.messaging();
+
+  messaging.onMessage((payload) => {
+    console.log("Message received while page is in foreground: ", payload);
+
+    const title = payload.notification.title;
+    const options = {
+      body: payload.notification.body,
+      icon: payload.notification.image, // Using the image from your payload
+      data: { link: payload.fcmOptions?.link } // Pass the link into the notification
+    };
+
+    if (Notification.permission === 'granted') {
+      navigator.serviceWorker.ready.then((registration) => {
+        registration.showNotification(title, options);
+      });
+    }
+  });
+
+  function getCookie(name) {
+    let cookieValue = null;
+    if (document.cookie && document.cookie !== '') {
+      const cookies = document.cookie.split(';');
+      for (let i = 0; i < cookies.length; i++) {
+        const cookie = cookies[i].trim();
+        if (cookie.substring(0, name.length + 1) === (name + '=')) {
+          cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+          break;
+        }
+      }
+    }
+    return cookieValue;
+  }
+
+  function requestPermission() {
+    Notification.requestPermission().then((permission) => {
+      if (permission === "granted") {
+        console.log("Notification permission granted.")
+
+        // Replace with your VAPID key from the Firebase Console
+        messaging
+          .getToken({ vapidKey: "BC0JJGQ-dmztq44pVeWu_7oVPLeTEo5zHXvkA3uwi8JMBh3S9C3F1XF8e8SlqVE_aqkx3rtXGv_VBY8dnMxR84g" })
+          .then((currentToken) => {
+            if (currentToken) {
+              sendTokenToServer(currentToken)
+            } else {
+              console.log("No registration token available.")
+            }
+          })
+          .catch((err) => {
+            console.log("An error occurred while retrieving token.", err)
+          })
+      }
+    })
+  }
+
+  function sendTokenToServer(token) {
+    fetch("/api/users/1/save_token/", {
+      method: 'POST',
+      headers: {
+          'Content-Type': 'application/json',
+          'X-CSRFToken': getCookie('csrftoken')
+      },
+      body: JSON.stringify({ token: token })
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log("Token saved successfully:", data);
+    });
+  }
+</script>
+{% endblock %} 
+
+{% block scripts %}
+<script type="module">
+  // ... your standard frontend Firebase initialization code goes here ...
+
+  // Register the background worker file correctly
+  if ("serviceWorker" in navigator) {
+    navigator.serviceWorker
+      .register("/firebase-messaging-sw.js")
+      .then((registration) => {
+        console.log("Service Worker registered successfully with scope: ", registration.scope)
+      })
+      .catch((err) => {
+        console.error("Service Worker registration failed: ", err)
+      })
+  }
+</script>
 {% endblock %}

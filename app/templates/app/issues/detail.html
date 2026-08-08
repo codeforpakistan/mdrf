@@ -9,15 +9,19 @@
   </header>
   <p>
     <strong>Disaster:</strong>
-    {{ issue.disaster }}
+    {{ issue.disaster|default:"&mdash;" }}
   </p>
   <p>
     <strong>Hazard:</strong>
-    {{ issue.hazards.all|join:", "|default:"Not Specified" }}
+    {% if issue.disaster.hazards %}
+    {{ issue.disaster.hazards.all|join:", "|default:"&mdash;" }}
+    {% else %}
+    {{ issue.hazards.all|join:", "|default:"&mdash;" }}
+    {% endif %}
   </p>
   <p>
     <strong>Location:</strong>
-    {{ issue.location }}
+    {{ issue.locations.all|join:", " }}
   </p>
   <p>
     <strong>Status:</strong>

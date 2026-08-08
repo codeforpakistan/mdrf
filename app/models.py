@@ -2,14 +2,12 @@ from django.conf import settings
 from django.core.exceptions import ValidationError
 from django.db import models
 from django.urls import reverse
-from mptt.models import MPTTModel, TreeForeignKey
-from ckeditor.fields import RichTextField
+from django_ckeditor_5.fields import CKEditor5Field
+from mptt.models import MPTTModel, TreeForeignKey, TreeManyToManyField
 
 
 class TrackedModel(models.Model):
-    """Use this abstract model for tracking"""
-
-    user = models.ForeignKey(settings.AUTH_USER_MODEL, blank=True, null=True, on_delete=models.SET_NULL)
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, default=1, on_delete=models.SET_DEFAULT)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
@@ -17,12 +15,17 @@ class TrackedModel(models.Model):
         abstract = True
 
 
+class Image(TrackedModel):
+    file = models.FileField()
+    caption = models.CharField(max_length=100, null=True, blank=True)
+
+
 # Create your models here.
 class Hazard(MPTTModel):
     name = models.CharField(max_length=100, unique=True)
     slug = models.SlugField(unique=True)
     summary = models.CharField(max_length=255)
-    description = RichTextField(blank=True, null=True)
+    description = CKEditor5Field(blank=True, null=True)
     is_visible = models.BooleanField(default=True)
     parent = TreeForeignKey('self', on_delete=models.CASCADE, null=True, blank=True, related_name='children')
 
@@ -37,11 +40,14 @@ class Hazard(MPTTModel):
 
 class Disaster(TrackedModel):
     name = models.CharField(max_length=100)
-    description = RichTextField(blank=True, null=True)
+    description = CKEditor5Field(blank=True, null=True)
     start_date = models.DateField(null=True, blank=True)
     end_date = models.DateField(null=True, blank=True)
-    hazards = models.ManyToManyField("Hazard")
-    locations = models.ManyToManyField("Location")
+    hazards = models.ManyToManyField("Hazard", blank=True)
+    locations = TreeManyToManyField("Location", blank=True)
+    latitude = models.FloatField(blank=True, null=True)
+    longitude = models.FloatField(blank=True, null=True)
+    
 
     def __str__(self):
         return self.name
@@ -71,13 +77,12 @@ class Issue(TrackedModel):
         CANCELLED = 'Cancelled'
 
     title = models.CharField(max_length=150)
-    description = RichTextField(null=True, blank=True)
+    description = CKEditor5Field(null=True, blank=True)
     disaster = models.ForeignKey(Disaster, null=True, blank=True, on_delete=models.SET_NULL)
     hazard = TreeForeignKey(Hazard, null=True, blank=True, on_delete=models.SET_NULL)
-    latitude = models.FloatField(null=True, blank=True)
-    longitude = models.FloatField(null=True, blank=True)
-    location = models.ForeignKey("Location", null=True, blank=True, on_delete=models.SET_NULL)
-    status = models.CharField(max_length=20, choices=StatusChoices.choices, default=StatusChoices.OPEN)
+    gallery = models.ManyToManyField(Image, blank=True)
+    locations = TreeManyToManyField(Location, blank=True)
+    status = models.CharField(max_length=20, choices=StatusChoices, default=StatusChoices.OPEN)
 
     def __str__(self):
         return self.title
@@ -91,19 +96,22 @@ class Resource(TrackedModel):
         MEDICAL = "Medical"
         OTHER = "Other"
 
-    type = models.CharField(choices=TypeChoices.choices, max_length=100)
+    type = models.CharField(choices=TypeChoices, max_length=100)
     name = models.CharField(max_length=100)
-    location = models.ForeignKey("Location", null=True, on_delete=models.SET_NULL)
-    description = RichTextField(blank=True, null=True)
+    description = CKEditor5Field(blank=True, null=True)
+    gallery = models.ManyToManyField(Image, blank=True)
+    locations = TreeManyToManyField(Location, blank=True)
+    latitude = models.FloatField(blank=True, null=True)
+    longitude = models.FloatField(blank=True, null=True)
 
     def __str__(self):
         return self.name
 
 
 class Alert(TrackedModel):
-    hazard = models.ForeignKey(Hazard, null=True, on_delete=models.SET_NULL)
+    hazard = models.ForeignKey(Hazard, null=True, blank=True, on_delete=models.SET_NULL)
     disaster = models.ForeignKey(Disaster, null=True, blank=True, on_delete=models.SET_NULL)
-    message = RichTextField()
+    message = CKEditor5Field()
 
     class Mata:
         constraints = [

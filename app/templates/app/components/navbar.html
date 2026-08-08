@@ -15,6 +15,9 @@
         <li class="nav-item">
           <a class="nav-link {% if request.resolver_match.url_name == 'issue_list' %}active{% endif %}" href="{% url 'issue_list' %}">Issues</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link {% if request.resolver_match.url_name == 'resource_list' %}active{% endif %}" href="{% url 'resource_list' %}">Resources</a>
+        </li>
         
       </ul>
       <form class="d-flex flex-grow-1 mx-5" role="search">

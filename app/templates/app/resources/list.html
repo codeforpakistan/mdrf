@@ -1,0 +1,40 @@
+{% extends "app/layouts/page.html" %} 
+{% load mptt_tags %} 
+{% block content %}
+<article>
+  <header>
+    <h1>
+      Resources
+      <a class="btn btn-success btn-sm float-end" href="{% url 'admin:app_resource_add' %}">Identify Resource</a>
+    </h1>
+    <p class="lead">Public reported resources, providing valuable additional service in times of disaster</p>
+  </header>
+  <table class="table table-hover table-striped">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Title</th>
+        <th scope="col">Type</th>
+        <th scope="col">Location(s)</th>
+        <th scope="col">User</th>
+        <th scope="col">Reported</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for resource in resources %}
+      <tr>
+        <th scope="row">{{ resource.id }}</th>
+        <td><a href="{% url 'resource_detail' resource.id %}">{{ resource.name }}</a></td>
+        <td>{{ resource.type }}</td>
+        <td>
+          {{ resource.locations.all|join:", " }}
+        </td>
+        <td>{{ resource.user.username }}</td>
+        <td>{{ resource.created_at }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+</article>
+{% endblock %}

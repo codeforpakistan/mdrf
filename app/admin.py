@@ -3,7 +3,16 @@ from django.http import HttpResponseRedirect
 from django.urls import reverse
 from mptt.admin import MPTTModelAdmin
 
-from .models import Alert, Disaster, Hazard, Issue, Location, Resource, Subscription
+from .models import (
+    Alert,
+    Disaster,
+    Hazard,
+    Image,
+    Issue,
+    Location,
+    Resource,
+    Subscription,
+)
 
 # Register your models here.
 
@@ -38,6 +47,10 @@ class AlertAdmin(admin.ModelAdmin):
 
 @admin.register(Resource)
 class ResourceAdmin(admin.ModelAdmin):
+    pass
+
+@admin.register(Image)
+class ImageAdmin(admin.ModelAdmin):
     pass
 
 @admin.register(Issue)

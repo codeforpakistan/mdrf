@@ -26,9 +26,9 @@
       <tr>
         <th scope="row">{{ issue.id }}</th>
         <td><a href="{% url 'issue_detail' issue.id %}">{{ issue.title }}</a></td>
-        <td>{{ issue.disaster.name }}</td>
-        <td>{% if issue.disaster.hazard %}{{ issue.disaster.hazard.name }}{% else %}{{ issue.hazards.all|join:", "|default:"Not Specified" }}{% endif %}</td>
-        <td>{{ issue.location }}</td>
+        <td>{{ issue.disaster.name|default:"&mdash;" }}</td>
+        <td>{% if issue.disaster.hazards %}{{ issue.disaster.hazards.all|join:', ' }}{% else %}{{ issue.hazards.all|join:", "|default:"&mdash;" }}{% endif %}</td>
+        <td>{{ issue.locations.all|join:", " }}</td>
         <td>{{ issue.status }}</td>
         <td>{{ issue.user.username }}</td>
         <td>{{ issue.created_at }}</td>
