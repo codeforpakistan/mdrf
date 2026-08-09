@@ -1,11 +1,13 @@
 from django.urls import include, path
 from rest_framework import routers
 
-from api.views import UserViewSet
+from api.views.hazards import HazardViewset
+from api.views.users import UserViewSet
 
 # Routers provide an easy way of automatically determining the URL conf.
 router = routers.DefaultRouter()
 router.register(r"users", UserViewSet)
+router.register(r"hazards", HazardViewset)
 
 # Wire up our API using automatic URL routing.
 # Additionally, we include login URLs for the browsable API.

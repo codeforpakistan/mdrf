@@ -1,0 +1,35 @@
+# Variables
+@baseUrl = http://localhost:8000
+@accessToken = your_access_token_here
+@refreshToken = your_refresh_token_here
+@username = admin
+@password = admin
+
+
+### Home
+# @name homePage
+GET {{baseUrl}}/api/
+Origin: http://localhost:3000
+Content-Type: application/json
+Authorization: Bearer {{accessToken}}
+
+### Login
+# @name loginPage
+POST {{baseUrl}}/auth/app/v1/auth/login
+Origin: http://localhost:3000
+Content-Type: application/json
+
+{ 
+    "username": "{{username}}", 
+    "password": "{{password}}" 
+}
+
+### Assign value
+@accessToken = {{loginPage.response.body.meta.access_token}}
+@refreshToken = {{loginPage.response.body.meta.refresh_token}}
+
+### List Users
+GET {{baseUrl}}/api/users/
+Authorization: Bearer {{accessToken}}
+Origin: http://localhost:3000
+Content-Type: application/json

@@ -9,9 +9,11 @@ https://docs.djangoproject.com/en/5.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.2/ref/settings/
 """
-import environ
 import os
+from datetime import timedelta
 from pathlib import Path
+
+import environ
 
 env = environ.Env(
     # set casting, default value
@@ -48,10 +50,9 @@ INSTALLED_APPS = [
     'django_bootstrap5',    
     'django_browser_reload',
 
-    'django_ckeditor_5',
-
     'allauth',
     'allauth.account',
+    'allauth.headless',
     'allauth.socialaccount',
     'allauth.socialaccount.providers.google',
 
@@ -59,14 +60,18 @@ INSTALLED_APPS = [
     'mptt',
     'rest_framework',
     'push_notifications',
+    'drf_spectacular',
 
-    'app',
+    'corsheaders',
+
+    # 'www',
     'api'
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    "corsheaders.middleware.CorsMiddleware",
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -81,9 +86,10 @@ ROOT_URLCONF = 'project.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / "app" / "templates"],
+        'DIRS': [BASE_DIR / "templates"],
         'APP_DIRS': True,
         'OPTIONS': {
+            'debug': False,
             'context_processors': [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
@@ -157,45 +163,18 @@ AUTHENTICATION_BACKENDS = [
     'allauth.account.auth_backends.AuthenticationBackend',
 ]
 
-# SOCIALACCOUNT_PROVIDERS = {
-#     'google': {
-#         'SCOPE': [
-#             'profile',
-#             'email',
-#         ],
-#         'AUTH_PARAMS': {
-#             'access_type': 'online',
-#         },
-#         'OAUTH_PKCE_ENABLED': True,
-#     }
-# }
-
 SOCIALACCOUNT_LOGIN_ON_GET = True
 ACCOUNT_LOGOUT_ON_GET = True
 # ACCOUNT_LOGIN_METHODS = {'email'}
 # ACCOUNT_SIGNUP_FIELDS = ['email', 'phone', 'username', 'password1', 'password2'] 
 # SOCIALACCOUNT_ONLY = True
-# ACCOUNT_EMAIL_VERIFICATION = 'none'
+ACCOUNT_EMAIL_VERIFICATION = "none"
+ACCOUNT_EMAIL_REQUIRED = False
+ACCOUNT_CONFIRM_EMAIL_ON_GET = False
 LOGIN_REDIRECT_URL = '/'  # Can be a path like '/dashboard/' or a named URL pattern
 LOGOUT_REDIRECT_URL = '/'
 
-ACCOUNT_FORMS = {
-    'login': 'app.forms.CustomLoginForm',
-    'signup': 'app.forms.CustomSignupForm',
-    # 'reset_password': 'app.forms.CustomPasswordForm',
-    # You can also add 'reset_password', etc.
-}
-
-
 SECURE_REFERRER_POLICY = "strict-origin-when-cross-origin"
-
-REST_FRAMEWORK = {
-    # Use Django's standard `django.contrib.auth` permissions,
-    # or allow read-only access for unauthenticated users.
-    "DEFAULT_PERMISSION_CLASSES": [
-        "rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly"
-    ]
-}
 
 if DEBUG:
     GDAL_LIBRARY_PATH = r"C:\Program Files\QGIS 3.34.10\bin\gdal309.dll" 
@@ -239,97 +218,56 @@ PUSH_NOTIFICATIONS_SETTINGS = {
     "FCM_CRDENTIALS": firebase_cred,
 }
 
-
-customColorPalette = [
-    {
-        'color': 'hsl(4, 90%, 58%)',
-        'label': 'Red'
-    },
-    {
-        'color': 'hsl(340, 82%, 52%)',
-        'label': 'Pink'
-    },
-    {
-        'color': 'hsl(291, 64%, 42%)',
-        'label': 'Purple'
-    },
-    {
-        'color': 'hsl(262, 52%, 47%)',
-        'label': 'Deep Purple'
-    },
-    {
-        'color': 'hsl(231, 48%, 48%)',
-        'label': 'Indigo'
-    },
-    {
-        'color': 'hsl(207, 90%, 54%)',
-        'label': 'Blue'
-    },
+CORS_ALLOWED_ORIGINS  = [
+    "http://localhost:3000",
+]
+CORS_ALLOW_CREDENTIALS = True
+CSRF_TRUSTED_ORIGINS = [
+    "http://localhost:3000",
 ]
 
-CKEDITOR_5_CONFIGS = {
-    'default': {
-        'toolbar': {
-            'items': ['heading', '|', 'bold', 'italic', 'link',
-                      'bulletedList', 'numberedList', 'blockQuote', 'imageUpload', ],
-                    }
+REST_FRAMEWORK = {
+    'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'allauth.headless.contrib.rest_framework.authentication.JWTTokenAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
+    ],
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.IsAuthenticated', 
+    ]
+}
 
-    },
-    'extends': {
-        'blockToolbar': [
-            'paragraph', 'heading1', 'heading2', 'heading3',
-            '|',
-            'bulletedList', 'numberedList',
-            '|',
-            'blockQuote',
-        ],
-        'toolbar': {
-            'items': ['heading', '|', 'outdent', 'indent', '|', 'bold', 'italic', 'link', 'underline', 'strikethrough',
-                      'code','subscript', 'superscript', 'highlight', '|', 'codeBlock', 'sourceEditing', 'insertImage',
-                    'bulletedList', 'numberedList', 'todoList', '|',  'blockQuote', 'imageUpload', '|',
-                    'fontSize', 'fontFamily', 'fontColor', 'fontBackgroundColor', 'mediaEmbed', 'removeFormat',
-                    'insertTable',
-                    ],
-            'shouldNotGroupWhenFull': 'true'
-        },
-        'image': {
-            'toolbar': ['imageTextAlternative', '|', 'imageStyle:alignLeft',
-                        'imageStyle:alignRight', 'imageStyle:alignCenter', 'imageStyle:side',  '|'],
-            'styles': [
-                'full',
-                'side',
-                'alignLeft',
-                'alignRight',
-                'alignCenter',
-            ]
+HEADLESS_ONLY=True
+HEADLESS_CLIENTS = ["app"]
+HEADLESS_FRONTEND_URLS = {
+    "account_confirm_email": "https://localhost:3000/account/verify-email/{key}",
+    "account_reset_password_from_key": "https://localhost:3000/account/password/reset/key/{key}",
+    "account_signup": "https://localhost:3000/account/signup",
+}
+# Configure Headless Token Strategy to JWT
+HEADLESS_TOKEN_STRATEGY = "allauth.headless.tokens.strategies.jwt.JWTTokenStrategy"
+HEADLESS_ALLOW_BEARER_TOKEN = True
+HEADLESS_JWT_ALGORITHM = "HS256"
+HEADLESS_JWT_SECRET_KEY = SECRET_KEY
+# Custom JWT configuration parameters (Optional)
+HEADLESS_JWT_REFRESH_TOKEN_EXPIRES_IN = 2592000  # 30 days in seconds
+HEADLESS_JWT_AUTHORIZATION_HEADER_SCHEME = "Bearer"
+HEADLESS_JWT_STATEFUL_VALIDATION_ENABLED = False 
 
-        },
-        'table': {
-            'contentToolbar': [ 'tableColumn', 'tableRow', 'mergeTableCells',
-            'tableProperties', 'tableCellProperties' ],
-            'tableProperties': {
-                'borderColors': customColorPalette,
-                'backgroundColors': customColorPalette
-            },
-            'tableCellProperties': {
-                'borderColors': customColorPalette,
-                'backgroundColors': customColorPalette
-            }
-        },
-        'heading' : {
-            'options': [
-                { 'model': 'paragraph', 'title': 'Paragraph', 'class': 'ck-heading_paragraph' },
-                { 'model': 'heading1', 'view': 'h1', 'title': 'Heading 1', 'class': 'ck-heading_heading1' },
-                { 'model': 'heading2', 'view': 'h2', 'title': 'Heading 2', 'class': 'ck-heading_heading2' },
-                { 'model': 'heading3', 'view': 'h3', 'title': 'Heading 3', 'class': 'ck-heading_heading3' }
-            ]
-        }
-    },
-    'list': {
-        'properties': {
-            'styles': 'true',
-            'startIndex': 'true',
-            'reversed': 'true',
-        }
-    }
+# from corsheaders.defaults import default_headers
+
+# CORS_ALLOW_HEADERS = (
+#     *default_headers,
+#     "x-session-token",
+#     "x-email-verification-key",
+#     "x-password-reset-key",
+# )
+# CORS_ALLOW_CREDENTIALS = True
+
+SPECTACULAR_SETTINGS = {
+    'TITLE': 'MDRF API',
+    'DESCRIPTION': 'Multi-Disaster Response Framework',
+    'VERSION': '1.0.0',
+    'SERVE_INCLUDE_SCHEMA': False,
+    # OTHER SETTINGS
 }
